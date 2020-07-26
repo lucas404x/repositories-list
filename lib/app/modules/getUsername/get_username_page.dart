@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:repositories_list/app/modules/getUsername/controller/get_username_controller.dart';
 import 'package:repositories_list/app/shared/constants/colors.dart';
 import 'package:repositories_list/app/shared/widgets/button/button.dart';
 
@@ -8,11 +10,16 @@ class GetUsernamePage extends StatefulWidget {
 }
 
 class _GetUsernamePageState extends State<GetUsernamePage> {
+  final getUsernameController = Modular.get<GetUsernameController>();
+  final textEditingController = TextEditingController();
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
+      key: scaffoldKey,
       body: Padding(
         padding: EdgeInsets.all(20),
         child: SingleChildScrollView(
@@ -27,6 +34,7 @@ class _GetUsernamePageState extends State<GetUsernamePage> {
               Padding(
                 padding: EdgeInsets.only(top: size.width * .18),
                 child: TextField(
+                  controller: textEditingController,
                   textAlign: TextAlign.center,
                   style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
@@ -49,6 +57,8 @@ class _GetUsernamePageState extends State<GetUsernamePage> {
               ),
               Align(
                 child: Button(
+                  onPressed: () => getUsernameController.searchUsername(
+                      scaffoldKey, textEditingController.text),
                   width: size.width * .5,
                   height: size.height * .06,
                   color: buttonColor,
