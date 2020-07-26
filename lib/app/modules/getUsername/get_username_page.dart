@@ -8,6 +8,17 @@ class GetUsernamePage extends StatefulWidget {
 class _GetUsernamePageState extends State<GetUsernamePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Padding(
+      padding: EdgeInsets.all(10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Image.asset(
+            'assets/images/github_icon.png',
+            width: 300,
+          )
+        ],
+      ),
+    );
   }
 }
