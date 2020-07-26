@@ -8,8 +8,9 @@ class AppWidget extends StatelessWidget {
       navigatorKey: Modular.navigatorKey,
       title: 'Repositories list',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          scaffoldBackgroundColor: Colors.black,
+          accentColor: Colors.white,
+          cursorColor: Colors.white),
       initialRoute: Modular.initialRoute,
       onGenerateRoute: Modular.generateRoute,
     );
