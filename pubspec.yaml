@@ -43,9 +43,10 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
+  assets:
+    - assets/images/github_icon.png
+
+
   uses-material-design: true
 vars:
   clean: flutter clean
@@ -55,5 +56,3 @@ scripts:
   mobx_build: $clean & $get & $runner build --delete-conflicting-outputs
   mobx_watch: $clean & $get & $runner watch --delete-conflicting-outputs
   # To add assets to your application, add an assets section, like this:
-assets:
-  assets/images/github_icon.png
