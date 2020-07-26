@@ -27,6 +27,7 @@ class _GetUsernamePageState extends State<GetUsernamePage> {
               Padding(
                 padding: EdgeInsets.only(top: size.width * .18),
                 child: TextField(
+                  textAlign: TextAlign.center,
                   style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
