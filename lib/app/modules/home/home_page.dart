@@ -3,6 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:repositories_list/app/shared/models/repository_model.dart';
 import 'package:repositories_list/app/shared/models/user_model.dart';
 import 'package:repositories_list/app/shared/widgets/profile_button/profile_button.dart';
+import 'package:repositories_list/app/shared/widgets/repository_card/repository_card.dart';
 import 'home_controller.dart';
 
 class HomePage extends StatefulWidget {
@@ -32,7 +33,13 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         title: Text(userModel.login),
         centerTitle: true,
       ),
-      body: Column(),
+      body: ListView.builder(
+        itemBuilder: (context, index) => Padding(
+          padding: EdgeInsets.all(25),
+          child: RepositoryCard(repositories[index]),
+        ),
+        itemCount: repositories.length,
+      ),
     );
   }
 }
