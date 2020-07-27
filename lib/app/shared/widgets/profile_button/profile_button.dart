@@ -12,13 +12,14 @@ class ProfileButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => Modular.to.pushNamed('/home/user', arguments: userModel),
-      child: Container(
-        width: size,
-        height: size,
-        decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            image: DecorationImage(
-                image: NetworkImage(userModel.avatarUrl), fit: BoxFit.cover)),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(100),
+        child: FadeInImage(
+            height: size,
+            width: size,
+            fit: BoxFit.cover,
+            placeholder: AssetImage('assets/images/github_icon.png'),
+            image: NetworkImage(userModel.avatarUrl)),
       ),
     );
   }
