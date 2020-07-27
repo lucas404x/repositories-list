@@ -61,7 +61,7 @@ class _GetUsernamePageState extends State<GetUsernamePage> {
                       scaffoldKey, textEditingController.text),
                   width: size.width * .5,
                   height: size.height * .06,
-                  color: buttonColor,
+                  color: BUTTON_COLOR,
                   name: 'Search',
                   nameStyle: TextStyle(
                       color: Colors.white,
