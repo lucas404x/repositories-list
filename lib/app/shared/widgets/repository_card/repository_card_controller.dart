@@ -14,12 +14,6 @@ abstract class _RepositoryCardControllerBase with Store {
 
   double fontSize(int length, double maxSize, double minSize) {
     var size = (maxSize - length).abs().toDouble();
-
-    if (size > maxSize)
-      return minSize;
-    else if (size < minSize)
-      return minSize;
-    else
-      return size;
+    return size > maxSize || size < minSize ? minSize : size;
   }
 }
