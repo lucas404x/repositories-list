@@ -4,7 +4,6 @@ import 'package:repositories_list/app/shared/models/repository_model.dart';
 import 'package:repositories_list/app/shared/models/user_model.dart';
 import 'package:repositories_list/app/shared/widgets/profile_button/profile_button.dart';
 import 'package:repositories_list/app/shared/widgets/repository_card/repository_card.dart';
-import 'home_controller.dart';
 
 class HomePage extends StatefulWidget {
   final Map data;
@@ -14,7 +13,7 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends ModularState<HomePage, HomeController> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     UserModel userModel = widget.data["info"];
