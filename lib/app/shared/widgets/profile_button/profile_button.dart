@@ -11,7 +11,7 @@ class ProfileButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Modular.to.pushNamed('/home/user', arguments: userModel),
+      onTap: () => Modular.to.pushNamed('/user', arguments: userModel),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(100),
         child: FadeInImage(
