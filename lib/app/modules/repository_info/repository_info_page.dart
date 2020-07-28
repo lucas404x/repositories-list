@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../shared/models/repository_model.dart';
 import '../../shared/widgets/separator/separator_widget.dart';
@@ -16,7 +17,7 @@ class RepositoryInfoPage extends StatefulWidget {
 
 class _RepositoryInfoPageState
     extends ModularState<RepositoryInfoPage, RepositoryInfoController> {
-  //use 'controller' variable to access controller
+  final _repositoryInfoController = Modular.get<RepositoryInfoController>();
   RepositoryModel _repository;
 
   @override
@@ -68,10 +69,14 @@ class _RepositoryInfoPageState
                 content: this._repository.subscribersCount?.toString() ?? "0",
               ),
               SeparatorWidget(),
-              InformationFieldWidget(
-                title: "Git URL",
-                titleStyle: textThemes.headline6,
-                content: this._repository.gitUrl,
+              GestureDetector(
+                onTap: () =>
+                    _repositoryInfoController.openUrl(this._repository.gitUrl),
+                child: InformationFieldWidget(
+                  title: "Git URL",
+                  titleStyle: textThemes.headline6,
+                  content: this._repository.gitUrl,
+                ),
               ),
             ],
           ),
