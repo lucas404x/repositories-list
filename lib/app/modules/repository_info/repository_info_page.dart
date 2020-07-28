@@ -53,7 +53,7 @@ class _RepositoryInfoPageState
               InformationFieldWidget(
                 title: "Language",
                 titleStyle: textThemes.headline6,
-                content: this._repository.language,
+                content: this._repository.language ?? "Not informed.",
               ),
               SeparatorWidget(),
               InformationFieldWidget(
