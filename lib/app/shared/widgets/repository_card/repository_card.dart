@@ -15,6 +15,8 @@ class RepositoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    String textTitleView = repositoryCardController.changeText(
+        repositoryModel.name, (size.width * .07).toInt());
 
     return GestureDetector(
       onTap: () =>
@@ -27,15 +29,17 @@ class RepositoryCard extends StatelessWidget {
             children: <Widget>[
               Row(
                 children: <Widget>[
-                  Text(
-                    repositoryModel.name,
-                    style: TextStyle(
-                        fontWeight: FontWeight.w800,
-                        color: Colors.white,
-                        fontSize: repositoryCardController.fontSize(
-                            repositoryModel.name.length,
-                            TITLE_REPO_MAX_SIZE,
-                            TITLE_REPO_MIN_SIZE)),
+                  SingleChildScrollView(
+                    child: Text(
+                      textTitleView,
+                      style: TextStyle(
+                          fontWeight: FontWeight.w800,
+                          color: Colors.white,
+                          fontSize: repositoryCardController.fontSize(
+                              textTitleView.length,
+                              TITLE_REPO_MAX_SIZE,
+                              TITLE_REPO_MIN_SIZE)),
+                    ),
                   ),
                   Spacer(),
                   Text(
