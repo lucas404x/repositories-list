@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:repositories_list/app/modules/userInfo/user_info_module.dart';
 
 import 'app_widget.dart';
 import 'modules/getUsername/get_username_module.dart';
@@ -14,7 +15,8 @@ class AppModule extends MainModule {
   List<Router> get routers => [
         Router(Modular.initialRoute, module: GetUsernameModule()),
         Router('/home', module: HomeModule()),
-        Router('/repository', module: RepositoryInfoModule())
+        Router('/repository', module: RepositoryInfoModule()),
+        Router('/user', module: UserInfoModule())
       ];
 
   @override
