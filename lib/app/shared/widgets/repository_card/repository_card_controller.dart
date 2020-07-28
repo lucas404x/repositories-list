@@ -6,9 +6,9 @@ class RepositoryCardController = _RepositoryCardControllerBase
     with _$RepositoryCardController;
 
 abstract class _RepositoryCardControllerBase with Store {
-  double fontSize(int length, double maxSize) {
+  double fontSize(int length, double maxSize, double minSize) {
     var size = (maxSize - length).abs().toDouble();
 
-    return size > maxSize ? maxSize : size;
+    return size > maxSize || size < minSize ? maxSize : size;
   }
 }

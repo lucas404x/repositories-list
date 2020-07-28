@@ -33,7 +33,9 @@ class RepositoryCard extends StatelessWidget {
                         fontWeight: FontWeight.w800,
                         color: Colors.white,
                         fontSize: repositoryCardController.fontSize(
-                            repositoryModel.name.length, TITLE_REPO_MAX_SIZE)),
+                            repositoryModel.name.length,
+                            TITLE_REPO_MAX_SIZE,
+                            TITLE_REPO_MIN_SIZE)),
                   ),
                   Spacer(),
                   Text(
@@ -62,7 +64,8 @@ class RepositoryCard extends StatelessWidget {
                                 repositoryModel.description == null
                                     ? 0
                                     : repositoryModel.description.length,
-                                DESCRIPTION_REPO_MAX_SIZE)),
+                                DESCRIPTION_REPO_MAX_SIZE,
+                                DESCRIPTION_REPO_MIN_SIZE)),
                       )))
             ],
           ),
