@@ -20,7 +20,7 @@ class RepositoryCard extends StatelessWidget {
 
     return GestureDetector(
       onTap: () =>
-          Modular.to.pushNamed('/home/repoDetails', arguments: repositoryModel),
+          Modular.to.pushNamed('/repository', arguments: repositoryModel),
       child: Container(
         child: Padding(
           padding: EdgeInsets.all(10),

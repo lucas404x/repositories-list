@@ -9,9 +9,19 @@ class AppWidget extends StatelessWidget {
       navigatorKey: Modular.navigatorKey,
       title: 'Repositories list',
       theme: ThemeData(
-          scaffoldBackgroundColor: Colors.black,
-          accentColor: Colors.white,
-          cursorColor: Colors.white),
+        scaffoldBackgroundColor: Colors.black,
+        accentColor: Colors.white,
+        cursorColor: Colors.white,
+        textTheme: TextTheme(
+          headline6: TextStyle(
+            color: Colors.white,
+          ),
+          bodyText2: TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+          ),
+        ),
+      ),
       initialRoute: Modular.initialRoute,
       onGenerateRoute: Modular.generateRoute,
     );
