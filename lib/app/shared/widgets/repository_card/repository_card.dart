@@ -7,8 +7,9 @@ import 'repository_card_controller.dart';
 
 class RepositoryCard extends StatelessWidget {
   final RepositoryModel repositoryModel;
+  final Function onTap;
 
-  RepositoryCard(this.repositoryModel);
+  RepositoryCard({this.repositoryModel, this.onTap});
 
   final repositoryCardController = Modular.get<RepositoryCardController>();
 
@@ -19,8 +20,7 @@ class RepositoryCard extends StatelessWidget {
         repositoryModel.name, (size.width * .07).toInt());
 
     return GestureDetector(
-      onTap: () =>
-          Modular.to.pushNamed('/repository', arguments: repositoryModel),
+      onTap: onTap,
       child: Container(
         child: Padding(
           padding: EdgeInsets.all(10),

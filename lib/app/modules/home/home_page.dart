@@ -26,6 +26,7 @@ class _HomePageState extends State<HomePage> {
           ProfileButton(
             userModel: userModel,
             size: size.width * .13,
+            onTap: () => Modular.to.pushNamed('/user', arguments: userModel),
           )
         ],
         backgroundColor: Colors.black,
@@ -35,7 +36,11 @@ class _HomePageState extends State<HomePage> {
       body: ListView.builder(
         itemBuilder: (context, index) => Padding(
           padding: EdgeInsets.all(25),
-          child: RepositoryCard(repositories[index]),
+          child: RepositoryCard(
+            repositoryModel: repositories[index],
+            onTap: () => Modular.to
+                .pushNamed('/repository', arguments: repositories[index]),
+          ),
         ),
         itemCount: repositories.length,
       ),
