@@ -2,7 +2,6 @@ import 'package:repositories_list/app/shared/widgets/repository_card/repository_
 
 import 'package:flutter_modular/flutter_modular.dart';
 import 'home_page.dart';
-import 'pages/repoDetails/repo_details_page.dart';
 
 class HomeModule extends ChildModule {
   @override
@@ -13,7 +12,6 @@ class HomeModule extends ChildModule {
   @override
   List<Router> get routers => [
         Router('/', child: (_, args) => HomePage(args.data)),
-        Router('/repoDetails', child: (_, args) => RepoDetailsPage(args.data))
       ];
 
   static Inject get to => Inject<HomeModule>.of();
