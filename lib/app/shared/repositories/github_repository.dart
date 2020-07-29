@@ -40,9 +40,12 @@ class GithubRepository implements IGithubRepository {
   }
 
   @override
-  Future<List<RepositoryModel>> getUserRepos(String username) async {
+  Future<List<RepositoryModel>> getUserRepos(String username,
+      [int page]) async {
+    page ??= 1;
     try {
-      Response response = await this.client.get("/users/$username/repos");
+      Response response =
+          await this.client.get("/users/$username/repos?page=$page");
       if (response.statusCode == 200) {
         return (response.data as List)
             .map((repositoryJson) => RepositoryModel.fromMap(repositoryJson))

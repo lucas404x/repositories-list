@@ -1,49 +1,57 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:repositories_list/app/shared/models/repository_model.dart';
-import 'package:repositories_list/app/shared/models/user_model.dart';
-import 'package:repositories_list/app/shared/widgets/profile_button/profile_button.dart';
-import 'package:repositories_list/app/shared/widgets/repository_card/repository_card.dart';
+
+import '../../shared/widgets/profile_button/profile_button.dart';
+import '../../shared/widgets/repository_card/repository_card.dart';
+import 'home_controller.dart';
 
 class HomePage extends StatefulWidget {
-  final Map data;
-  HomePage(this.data);
-
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends ModularState<HomePage, HomeController> {
   @override
   Widget build(BuildContext context) {
-    UserModel userModel = widget.data["info"];
-    List<RepositoryModel> repositories = widget.data["repositories"];
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
       appBar: AppBar(
         actions: <Widget>[
           ProfileButton(
-            userModel: userModel,
+            userModel: this.controller.userData,
             size: size.width * .13,
-            onTap: () => Modular.to.pushNamed('/user', arguments: userModel),
+            onTap: () => Modular.to.pushNamed('/user'),
           )
         ],
         backgroundColor: Colors.black,
-        title: Text(userModel.login),
+        title: Text(this.controller.userData.login),
         centerTitle: true,
       ),
-      body: ListView.builder(
-        itemBuilder: (context, index) => Padding(
-          padding: EdgeInsets.all(25),
-          child: RepositoryCard(
-            repositoryModel: repositories[index],
-            onTap: () => Modular.to
-                .pushNamed('/repository', arguments: repositories[index]),
-          ),
-        ),
-        itemCount: repositories.length,
+      body: Observer(
+        builder: (_) {
+          return ListView.builder(
+            controller: this.controller.scroll$,
+            itemBuilder: (context, index) => Padding(
+              padding: EdgeInsets.all(25),
+              child: RepositoryCard(
+                  onTap: () => Modular.to.pushNamed('/repository',
+                      arguments:
+                          this.controller.observableRepositoryList[index]),
+                  repositoryModel:
+                      this.controller.observableRepositoryList[index]),
+            ),
+            itemCount: this.controller.observableRepositoryList.length,
+          );
+        },
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    this.controller.scroll$.dispose();
+    super.dispose();
   }
 }
