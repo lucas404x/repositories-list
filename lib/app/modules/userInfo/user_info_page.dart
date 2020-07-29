@@ -51,7 +51,8 @@ class _UserInfoPageState extends State<UserInfoPage> {
             child: ListView.separated(
                 itemBuilder: (_, index) => InformationFieldWidget(
                     title: _keys[index],
-                    content: _userInfo[_keys[index]].toString()),
+                    content: _userInfo[_keys[index]]?.toString() ??
+                        "No info provided."),
                 separatorBuilder: (_, __) => SeparatorWidget(),
                 itemCount: _keys.length),
           ))
