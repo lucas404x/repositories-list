@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:dio/native_imp.dart';
-import 'package:repositories_list/app/shared/models/repository_model.dart';
-import 'package:repositories_list/app/shared/models/user_model.dart';
+
+import '../models/repository_model.dart';
+import '../models/user_model.dart';
 import 'interfaces/github_repository_interface.dart';
 
 class GithubRepository implements IGithubRepository {

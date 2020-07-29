@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:repositories_list/app/modules/getUsername/controller/get_username_controller.dart';
-import 'package:repositories_list/app/shared/constants/colors.dart';
-import 'package:repositories_list/app/shared/widgets/button/button.dart';
+
+import '../../shared/constants/colors.dart';
+import '../../shared/widgets/button/button.dart';
+import 'controller/get_username_controller.dart';
 
 class GetUsernamePage extends StatefulWidget {
   @override

@@ -2,10 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
-import 'package:repositories_list/app/shared/models/repository_model.dart';
-import 'package:repositories_list/app/shared/models/user_model.dart';
-import 'package:repositories_list/app/shared/repositories/interfaces/github_repository_interface.dart';
-import 'package:repositories_list/app/shared/stores/user_data_store.dart';
+
+import '../../../shared/models/repository_model.dart';
+import '../../../shared/models/user_model.dart';
+import '../../../shared/repositories/interfaces/github_repository_interface.dart';
+import '../../../shared/stores/user_data_store.dart';
+
 part 'get_username_controller.g.dart';
 
 class GetUsernameController = _GetUsernameControllerBase
