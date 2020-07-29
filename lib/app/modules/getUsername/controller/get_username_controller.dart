@@ -14,10 +14,10 @@ class GetUsernameController = _GetUsernameControllerBase
     with _$GetUsernameController;
 
 abstract class _GetUsernameControllerBase with Store {
-  IGithubRepository _githubRepository;
-  UserDataStore _userDataStore = Modular.get<UserDataStore>();
+  final IGithubRepository _githubRepository;
+  final UserDataStore _userDataStore;
 
-  _GetUsernameControllerBase(this._githubRepository);
+  _GetUsernameControllerBase(this._githubRepository, this._userDataStore);
 
   searchUsername(GlobalKey<ScaffoldState> key, String username) async {
     if (username.isEmpty) {

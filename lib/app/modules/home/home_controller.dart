@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../shared/constants/constants.dart' as consts;
@@ -15,7 +14,7 @@ class HomeController = _HomeControllerBase with _$HomeController;
 abstract class _HomeControllerBase with Store {
   final List<RepositoryModel> repositoriesList;
   final IGithubRepository _githubRepository;
-  UserDataStore _userDataStore;
+  final UserDataStore _userDataStore;
   UserModel userData;
   int currentPage = 1;
   int maxPages;
@@ -24,8 +23,8 @@ abstract class _HomeControllerBase with Store {
 
   ScrollController scroll$;
 
-  _HomeControllerBase(this.repositoriesList, this._githubRepository) {
-    this._userDataStore = Modular.get<UserDataStore>();
+  _HomeControllerBase(
+      this.repositoriesList, this._githubRepository, this._userDataStore) {
     this.addElementsToListOnScroll(this.repositoriesList);
     this.userData = this._userDataStore.userData;
     this.maxPages =
