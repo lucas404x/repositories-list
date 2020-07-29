@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:repositories_list/app/shared/widgets/information_field/information_field_widget.dart';
 
 import '../../shared/models/repository_model.dart';
 import '../../shared/widgets/separator/separator_widget.dart';
 import 'repository_info_controller.dart';
-import 'widgets/information_field/information_field_widget.dart';
 
 class RepositoryInfoPage extends StatefulWidget {
   final RepositoryModel repository;
