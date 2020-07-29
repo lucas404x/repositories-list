@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:repositories_list/app/modules/userInfo/user_info_controller.dart';
-import 'package:repositories_list/app/shared/widgets/information_field/information_field_widget.dart';
-import 'package:repositories_list/app/shared/widgets/profile_button/profile_button.dart';
-import 'package:repositories_list/app/shared/widgets/separator/separator_widget.dart';
+
+import '../../shared/widgets/information_field/information_field_widget.dart';
+import '../../shared/widgets/profile_button/profile_button.dart';
+import '../../shared/widgets/separator/separator_widget.dart';
+import 'user_info_controller.dart';
 
 class UserInfoPage extends StatefulWidget {
   @override

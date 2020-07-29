@@ -1,8 +1,8 @@
-import 'package:repositories_list/app/modules/home/home_controller.dart';
-import 'package:repositories_list/app/shared/repositories/interfaces/github_repository_interface.dart';
-import 'package:repositories_list/app/shared/widgets/repository_card/repository_card_controller.dart';
-
 import 'package:flutter_modular/flutter_modular.dart';
+
+import '../../shared/repositories/interfaces/github_repository_interface.dart';
+import '../../shared/widgets/repository_card/repository_card_controller.dart';
+import 'home_controller.dart';
 import 'home_page.dart';
 
 class HomeModule extends ChildModule {

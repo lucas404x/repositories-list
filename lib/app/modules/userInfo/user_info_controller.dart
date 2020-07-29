@@ -1,5 +1,7 @@
 import 'package:mobx/mobx.dart';
-import 'package:repositories_list/app/shared/models/user_model.dart';
+
+import '../../shared/models/user_model.dart';
+
 part 'user_info_controller.g.dart';
 
 class UserInfoController = _UserInfoControllerBase with _$UserInfoController;

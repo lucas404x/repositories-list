@@ -1,7 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:repositories_list/app/modules/userInfo/user_info_controller.dart';
-import 'package:repositories_list/app/shared/stores/user_data_store.dart';
 
+import '../../shared/stores/user_data_store.dart';
+import 'user_info_controller.dart';
 import 'user_info_page.dart';
 
 class UserInfoModule extends ChildModule {

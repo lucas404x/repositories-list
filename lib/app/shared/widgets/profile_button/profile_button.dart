@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:repositories_list/app/shared/models/user_model.dart';
+
+import '../../models/user_model.dart';
 
 class ProfileButton extends StatelessWidget {
   final UserModel userModel;

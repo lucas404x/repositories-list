@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:repositories_list/app/shared/constants/sizes.dart';
-import 'package:repositories_list/app/shared/models/repository_model.dart';
 
+import '../../constants/sizes.dart';
+import '../../models/repository_model.dart';
 import 'repository_card_controller.dart';
 
 class RepositoryCard extends StatelessWidget {
