@@ -59,13 +59,15 @@ class _RepositoryInfoPageState
               InformationFieldWidget(
                 title: "Stars Count",
                 titleStyle: textThemes.headline6,
-                content: this._repository.stargazersCount?.toString() ?? "0",
+                content: this._repository.stargazersCount?.toString() ??
+                    "Not informed.",
               ),
               SeparatorWidget(),
               InformationFieldWidget(
                 title: "Watchers",
                 titleStyle: textThemes.headline6,
-                content: this._repository.subscribersCount?.toString() ?? "0",
+                content: this._repository.subscribersCount?.toString() ??
+                    "Not informed",
               ),
               SeparatorWidget(),
               GestureDetector(
