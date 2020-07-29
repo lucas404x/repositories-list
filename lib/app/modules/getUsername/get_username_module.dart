@@ -1,16 +1,13 @@
-import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:repositories_list/app/modules/getUsername/controller/get_username_controller.dart';
-import 'package:repositories_list/app/modules/getUsername/get_username_page.dart';
-import 'package:repositories_list/app/shared/repositories/github_repository.dart';
+
+import '../../shared/repositories/interfaces/github_repository_interface.dart';
+import 'controller/get_username_controller.dart';
+import 'get_username_page.dart';
 
 class GetUsernameModule extends ChildModule {
   @override
   List<Bind> get binds => [
-        Bind((i) => GetUsernameController(GithubRepository(
-                Dio(BaseOptions(baseUrl: "https://api.github.com", headers: {
-              "Accept": "application/vnd.github.v3+json",
-            })))))
+        Bind((i) => GetUsernameController(Modular.get<IGithubRepository>())),
       ];
 
   @override
